@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.navbar {
+    height: rem(700px);
+    width: rem(300px);
+    padding: var(--mantine-spacing-md);
+    display: flex;
+    flex-direction: column;
+    border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    background-color: #F2EBF9;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+  }
+  
+  .navbarMain {
+    flex: 1;
+  }
+  
+  .header {
+    padding-bottom: var(--mantine-spacing-md);
+    margin-bottom: calc(var(--mantine-spacing-md) * 1.5);
+  }
+  
+  .footer {
+    padding-top: var(--mantine-spacing-md);
+    margin-top: var(--mantine-spacing-md);
+    border-top: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  }
+  
+  .link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: var(--mantine-font-size-sm);
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
+    padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+    border-radius: var(--mantine-radius-sm);
+    font-weight: 500;
+    color: black;
+    font-size: 16px;
+  
+    @mixin hover {
+      background-color: #E5D5FA;
+      color: #9854F6;
+  
+      .linkIcon {
+        color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+      }
+    }
+  
+    &[data-active] {
+      &,
+      &:hover {
+        background-color: var(--mantine-color-blue-light);
+        color: var(--mantine-color-blue-light-color);
+  
+        .linkIcon {
+          color: var(--mantine-color-blue-light-color);
+        }
+      }
+    }
+  }
+  
+  .linkIcon {
+    color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-2));
+    margin-right: var(--mantine-spacing-sm);
+    width: rem(25px);
+    height: rem(25px);
+  }
+  
