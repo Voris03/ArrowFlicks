@@ -1,28 +1,25 @@
 import { useState } from 'react';
 import { Group, Image } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import classes from './NavbarSimple.module.css';
 
 const data = [
-  { link: '', label: 'Movies' },
-  { link: '', label: 'Rated movies' },
+  { link: '/', label: 'Movies' },
+  { link: '/rated', label: 'Rated movies' },
 ];
 
 export function NavbarSimple() {
-  const [active, setActive] = useState('Billing');
+  const [active, setActive] = useState('Movies'); // Устанавливаем активный элемент по умолчанию на "Movies"
 
   const links = data.map((item) => (
-    <a
+    <Link
       className={classes.link}
-      data-active={item.label === active || undefined}
-      href={item.link}
+      to={item.link}
       key={item.label}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
-      }}
+      onClick={() => setActive(item.label)} // Обновляем активный элемент при клике
     >
-      <span>{item.label}</span>
-    </a>
+      <span data-active={item.label === active}>{item.label}</span>
+    </Link>
   ));
 
   return (
